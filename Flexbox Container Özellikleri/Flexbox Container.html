@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Container</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box; /*Bu özellik sayesinde box'larımızın genişlik ve yükseklikleri
+            verdiğimiz padding-border vs gibi şekkillerden etkilenip artmıyor veya azalmıyor*/
+        }
+        .container{
+            width: 75%;
+            margin: 0 auto;
+            display: flex; /*Container div'imizi flex box haline getirmek için kullanıyoruz*/
+            flex-direction: row; /*Flex-direction seçenekleri row ve column olarak değişiyor ve biz bu seçeneklerle axisleri değiştiriyormuşuz
+            gibi düşünebiliriz. Row ve column arasında seçim yapıldığı zaman hizalama seçimleri için kullandığımız justify-content ve align-items
+            özellikleri de tam tersi şekilde çalışmaya başlıyor*/
+            flex-direction: column;
+            justify-content: flex-start; /*Flexbox içerisindeki content'lerimizi flexbox'umuzun başlangıç noktasından hizalamak için kullanıyoruz*/
+            justify-content: flex-end; /*Flexbox içerisindeki content'lerimizi flexbox'umuzun başlangıç noktasından hizalamak için kullanıyoruz*/
+            justify-content: center; /*Flexbox içerisindeki content'lerimizi flexbox'umuzun ortasına hizalamak için kullanıyoruz*/
+            /*Ayrıca biz content'ler arasında boşluklar bırakarak hizalama yapmak istersek justify-content içerisinde
+            space-evenly----space-arround----space-between gibi seçeneklerden de faydalanabiliriz*/
+            align-items: flex-start; /*Flexbox içerisindeki contentlerimizi flex directionlarımıza göre main veya cross axiste hizalamak için
+            align-items özelliklerinden de faydalanabiliriz start-end ve center seçenekleri justify-content ile aynı mantıkta çalışıyor*/
+            align-items: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 600px;
+            background: black;
+        }
+        .box{
+            text-align: center;
+            background: #f2f2f2;
+            width: 100px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 10px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Article1</h1>
+            <p>Lorem ipsum dolor sit amet officia reiciemd.</p>
+        </div>
+        <div class="box">
+            <h1>Article2</h1>
+            <p>Voluptatem fugiat quidem officia reiciendis.</p>
+        </div>
+        <div class="box">
+            <h1>Article3</h1>
+            <p>Cupiditate libero atque quibusdam assumenda.</p>
+        </div>
+    </div>
+</body>
+</html>
