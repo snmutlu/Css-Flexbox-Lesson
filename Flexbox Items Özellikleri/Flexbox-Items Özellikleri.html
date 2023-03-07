@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Container</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box; /*Bu özellik sayesinde box'larımızın genişlik ve yükseklikleri
+            verdiğimiz padding-border vs gibi şekkillerden etkilenip artmıyor veya azalmıyor*/
+        }
+        .container{
+            width: 75%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            min-height: 600px;
+            background-color: black;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        .box{
+            text-align: center;
+            background: #f2f2f2;
+            width: 100px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 10px;
+
+        }
+        .box-1{
+            background: red;
+            order: 3; /*Biz order özelliği sayesinde sayfamızda hangi content'in daha önce görüntüleneceğini belirleyebiliyoruz*/
+        }
+        .box-2{
+            background: blue;
+            order: 1;
+            flex-grow: 3; /*Flex-grow özelliği sayesinde ise contentlerimizin flexbox'umuzun alanının ne kadarını dolduracağını
+            ayarlayabiliyoruz.*/
+        }
+        .box-3{
+            background: green;
+            order: 2;
+            align-self: flex-end; /*Align-self özelliği sayesinde flexbox'umuz içerisindeki contentleri ayrı bir şekilde
+            diğerlerinden bağımsız konumlandırabiliyoruz*/
+            flex-grow: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+     <div class="box box-1"></div>
+     <div class="box box-2"></div>
+     <div class="box box-3"></div>
+    </div>
+</body>
+</html>
